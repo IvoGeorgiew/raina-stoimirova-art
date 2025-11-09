@@ -1,0 +1,5 @@
+{
+    "compilerOptions": {
+      "jsx": "react-jsx"   // or "react-jsxdev" for dev mode
+    }
+  }

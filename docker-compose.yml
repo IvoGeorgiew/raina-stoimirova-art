@@ -1,0 +1,37 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: raina-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - ADMIN_USER=admin
+      - ADMIN_PASS=changeme
+      - SECRET_KEY=verysecretkey
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./backend/db.sqlite3:/app/db.sqlite3
+      # - ./backend:/app
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: raina-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    volumes:
+      # Mount local source code into the container
+      - ./frontend:/app
+      # Avoid overwriting node_modules from the host
+      - /app/node_modules
+    # command: npm run dev
+    # npm run build    # production build (output in dist/)
+    command: npm run build

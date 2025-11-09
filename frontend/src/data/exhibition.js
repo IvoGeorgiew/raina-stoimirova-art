@@ -1,0 +1,80 @@
+export const exhibitions = [
+  {
+    id: 1,
+    name: { en: "Light & Landscape", bg: "Светлина и пейзаж" },
+    date: "Jan 2022",
+    place: { en: "Paris, France", bg: "Париж, Франция" },
+  },
+  {
+    id: 2,
+    name: { en: "Rural Harmony", bg: "Селска хармония" },
+    date: "Mar 2022",
+    place: { en: "London, UK", bg: "Лондон, Великобритания" },
+  },
+  {
+    id: 3,
+    name: { en: "Private Collection", bg: "Частна колекция" },
+    date: "Jun 2022",
+    place: { en: "New York, USA", bg: "Ню Йорк, САЩ" },
+  },
+  {
+    id: 4,
+    name: { en: "Water & Sky", bg: "Вода и небе" },
+    date: "Sep 2022",
+    place: { en: "Berlin, Germany", bg: "Берлин, Германия" },
+  },
+  {
+    id: 5,
+    name: { en: "Coastal Art Gallery", bg: "Крайбрежна художествена галерия" },
+    date: "Nov 2022",
+    place: { en: "Barcelona, Spain", bg: "Барселона, Испания" },
+  },
+  {
+    id: 6,
+    name: { en: "Louvre Museum", bg: "Лувър музей" },
+    date: "Dec 2022",
+    place: { en: "Paris, France", bg: "Париж, Франция" },
+  },
+  {
+    id: 7,
+    name: { en: "Touring Exhibition", bg: "Пътуваща изложба" },
+    date: "Feb 2023",
+    place: { en: "Various Cities", bg: "Различни градове" },
+  },
+  {
+    id: 8,
+    name: { en: "Abstract Visions", bg: "Абстрактни визии" },
+    date: "Apr 2023",
+    place: { en: "Amsterdam, Netherlands", bg: "Амстердам, Нидерландия" },
+  },
+  {
+    id: 9,
+    name: { en: "Contemporary Catalog", bg: "Съвременен каталог" },
+    date: "Jun 2023",
+    place: { en: "Tokyo, Japan", bg: "Токио, Япония" },
+  },
+  {
+    id: 10,
+    name: { en: "Sold Auction", bg: "Продаден на търг" },
+    date: "Aug 2023",
+    place: { en: "London, UK", bg: "Лондон, Великобритания" },
+  },
+  {
+    id: 11,
+    name: { en: "Color Theory Show", bg: "Изложба на цветовата теория" },
+    date: "Oct 2023",
+    place: { en: "Berlin, Germany", bg: "Берлин, Германия" },
+  },
+  {
+    id: 12,
+    name: { en: "Art Festival 2022", bg: "Артистичен фестивал 2022" },
+    date: "Dec 2022",
+    place: { en: "Venice, Italy", bg: "Венеция, Италия" },
+  },
+  {
+    id: 13,
+    name: { en: "Artist's Studio", bg: "Ателие на художника" },
+    date: "Ongoing",
+    place: { en: "Paris, France", bg: "Париж, Франция" },
+  },
+];

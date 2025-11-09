@@ -1,0 +1,18 @@
+{
+    "sidebar": {
+      "artworks": "Artworks",
+      "about": "About",
+      "exhibitions": "Exhibitions",
+      "contact": "Contact"
+    },
+    "context" : {
+      "about" : "Hello! I’m Jean Pierre, a passionate visual artist with a love for exploring color, light, and emotion in every painting I create.\n\nMy journey started at a young age, experimenting with oils and watercolors, learning to capture the subtle nuances of nature and human expression. Over the years, I’ve exhibited my work in local galleries and participated in international exhibitions.\n\nI strive to create art that evokes feeling, tells a story, and connects with the viewer. Each piece is a reflection of my curiosity, passion, and commitment to beauty in all its forms.\n\nWhen I’m not painting, I enjoy traveling, studying different art movements, and mentoring young artists to help them find their own unique voice.",
+      "contact_me" : "To purchase a painting or any questions you may have, you can contact me at the following:",
+      "all" : "All",
+      "show_more" : "More",  
+      "show_less" : "Show less",
+      "date": "Date",
+      "place": "Place",
+      "back_to_gallery": "Back to Gallery"
+    }
+  }
