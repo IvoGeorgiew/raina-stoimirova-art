@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 import datetime, os
 
 Base = declarative_base()
-DB_PATH = os.path.join(os.path.dirname(__file__), 'db.sqlite3')
+DB_PATH = os.path.join(os.path.dirname(__file__), 'data/db.sqlite3')
 ENGINE = create_engine(f'sqlite:///{DB_PATH}', connect_args={'check_same_thread': False})
 SessionLocal = sessionmaker(bind=ENGINE)
 
