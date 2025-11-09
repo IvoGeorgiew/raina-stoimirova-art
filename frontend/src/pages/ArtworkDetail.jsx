@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function ArtworkDetail() {
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [artworksData, setArtworksData] = useState([]);
   const [exhibitionsData, setExhibitionsData] = useState([]);
   const { t, i18n } = useTranslation();
@@ -10,13 +12,13 @@ export default function ArtworkDetail() {
 
   useEffect(() => {
     // Fetch exhibitions
-    fetch("http://localhost:8000/api/exhibitions")
+    fetch(`${API_URL}/api/exhibitions`)
       .then(res => res.json())
       .then(data => setExhibitionsData(data))
       .catch(err => console.error("Error fetching exhibitions:", err));
 
     // Fetch artworks
-    fetch("http://localhost:8000/api/artworks")
+    fetch(`${API_URL}/api/artworks`)
       .then(res => res.json())
       .then(data => setArtworksData(data))
       .catch(err => console.error("Error fetching artworks:", err));

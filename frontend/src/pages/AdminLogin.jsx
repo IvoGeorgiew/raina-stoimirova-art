@@ -11,6 +11,8 @@ export default function AdminLogin() {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
+    const API_URL = import.meta.env.VITE_API_URL;
+
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -21,7 +23,7 @@ export default function AdminLogin() {
       formData.append("username", username);
       formData.append("password", password);
 
-      const res = await fetch("http://localhost:8000/api/login", {
+      const res = await fetch(`${API_URL}/api/login`, {
         method: "POST",
         body: formData,
       });

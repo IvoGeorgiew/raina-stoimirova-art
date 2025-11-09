@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import ArtworkCard from "../components/ArtworkCard";
 
 export default function Artworks() {
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const location = useLocation();
   const { t, i18n } = useTranslation();
 
@@ -15,13 +17,13 @@ export default function Artworks() {
   // Fetch artworks and exhibitions from API
   useEffect(() => {
     // Fetch exhibitions
-    fetch("http://localhost:8000/api/exhibitions")
+    fetch(`${API_URL}/api/exhibitions`)
       .then(res => res.json())
       .then(data => setExhibitionsData(data))
       .catch(err => console.error("Error fetching exhibitions:", err));
 
     // Fetch artworks
-    fetch("http://localhost:8000/api/artworks")
+    fetch(`${API_URL}/api/artworks`)
       .then(res => res.json())
       .then(data => setArtworksData(data))
       .catch(err => console.error("Error fetching artworks:", err));

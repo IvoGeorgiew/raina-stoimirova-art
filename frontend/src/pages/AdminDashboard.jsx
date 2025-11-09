@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 import axios from "axios";
 
 export default function AdminDashboard() {
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const { t, i18n } = useTranslation();
 
   const [showExhibitionForm, setShowExhibitionForm] = useState(false);
@@ -34,7 +36,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     // Fetch exhibitions to populate dropdown
     axios
-      .get("http://localhost:8000/api/exhibitions", {
+      .get(`${API_URL}/api/exhibitions`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setExhibitions(res.data))
@@ -51,7 +53,7 @@ export default function AdminDashboard() {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:8000/api/exhibitions",
+        `${API_URL}/api/exhibitions`,
         {
           name_en: exhibitionNameEn,
           name_bg: exhibitionNameBg,
@@ -96,7 +98,7 @@ export default function AdminDashboard() {
       formData.append("height", height);
       if (file) formData.append("file", file);
 
-      await axios.post("http://localhost:8000/api/artworks", formData, {
+      await axios.post(`${API_URL}/api/artworks`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
