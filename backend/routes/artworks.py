@@ -18,7 +18,7 @@ def list_artworks(db: Session = Depends(get_db)):
         # Construct the size string
         size_str = f"{a.height}x{a.width} cm"
         # Construct the img URL dynamically (adjust as needed)
-        img_url = f"http://localhost:8000/api/artworks/file/{a.id}"  # or full URL if hosted elsewhere
+        img_url = f"/api/artworks/file/{a.id}"  # or full URL if hosted elsewhere
 
         result.append({
             "id": a.id,

@@ -11,7 +11,8 @@ export default function AdminLogin() {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    const API_URL = import.meta.env.VITE_API_URL;
+    // const API_URL = import.meta.env.VITE_API_URL;
+    const API_URL = ""
 
     e.preventDefault();
     setLoading(true);

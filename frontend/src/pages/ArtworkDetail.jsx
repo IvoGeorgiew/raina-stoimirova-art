@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function ArtworkDetail() {
-  const API_URL = import.meta.env.VITE_API_URL;
+  // const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = ""
 
   const [artworksData, setArtworksData] = useState([]);
   const [exhibitionsData, setExhibitionsData] = useState([]);
