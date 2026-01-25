@@ -16,22 +16,22 @@ services:
       - ./backend:/app
     command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: raina-frontend
-    ports:
-      - "5173:5173"
-    depends_on:
-      - backend
-    environment:
-      - VITE_API_URL=http://135.181.153.150:8000
-    volumes:
-      # Mount local source code into the container
-      - ./frontend:/app
-      # Avoid overwriting node_modules from the host
-      - /app/node_modules
-    command: npm run dev
-    # npm run build    # production build (output in dist/)
+#  frontend:
+#    build:
+#      context: ./frontend
+#      dockerfile: Dockerfile
+#    container_name: raina-frontend
+#    ports:
+#      - "5173:5173"
+#    depends_on:
+#      - backend
+#    environment:
+#      - VITE_API_URL=http://135.181.153.150:8000
+#    volumes:
+#      # Mount local source code into the container
+#      - ./frontend:/app
+#      # Avoid overwriting node_modules from the host
+#      - /app/node_modules
+#    command: npm run dev
+#    # npm run build    # production build (output in dist/)
 #    command: npm run build
