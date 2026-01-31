@@ -26,10 +26,10 @@ def list_artworks(db: Session = Depends(get_db)):
                 "en": a.title_en,
                 "bg": a.title_bg
             },
-            "description": {
-                "en": a.description_en,
-                "bg": a.description_bg
-            },
+            # "description": {
+            #     "en": a.description_en,
+            #     "bg": a.description_bg
+            # },
             "img": img_url,
             "size": size_str,
             "exhibition": a.exhibition
