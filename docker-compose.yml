@@ -14,7 +14,7 @@ services:
       # - ./backend/uploads:/app/uploads
       # - ./backend/db.sqlite3:/app/db.sqlite3
       - ./backend:/app
-    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --proxy-headers --forwarded-allow-ips='*'
 
 #  frontend:
 #    build:
