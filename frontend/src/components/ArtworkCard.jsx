@@ -4,11 +4,13 @@ import { useTranslation } from "react-i18next";
 export default function ArtworkCard({ id, img, title }) {
   const API_URL = import.meta.env.VITE_API_URL;
   const { i18n } = useTranslation();
+
+  const fullImgUrl = `${API_URL}/api/artworks/${id}`;
   return (
     <Link to={`/artwork/${id}`}>
       <div className="break-inside-avoid mb-6 overflow-hidden  relative group cursor-pointer">
         <img
-          src={`${API_URL}/api/artworks/${id}`}
+          src={fullImgUrl}
           alt={title}
           className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
