@@ -5,7 +5,7 @@ export default function ArtworkCard({ id, img, title }) {
   const API_URL = import.meta.env.VITE_API_URL;
   const { i18n } = useTranslation();
 
-  const fullImgUrl = `${API_URL}/api/artworks/${id}`;
+  const fullImgUrl = `${API_URL}/api/artworks/file/${id}`;
   return (
     <Link to={`/artwork/${id}`}>
       <div className="break-inside-avoid mb-6 overflow-hidden  relative group cursor-pointer">
