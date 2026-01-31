@@ -4,37 +4,38 @@ import { useTranslation } from "react-i18next";
 
 export default function ArtworkDetail() {
   const API_URL = import.meta.env.VITE_API_URL;
-
+  
   const [artworksData, setArtworksData] = useState([]);
   const [exhibitionsData, setExhibitionsData] = useState([]);
   const { t, i18n } = useTranslation();
   const { id } = useParams();
-
+  
   useEffect(() => {
     // Fetch exhibitions
     fetch(`${API_URL}/api/exhibitions`)
-      .then(res => res.json())
-      .then(data => setExhibitionsData(data))
-      .catch(err => console.error("Error fetching exhibitions:", err));
-
+    .then(res => res.json())
+    .then(data => setExhibitionsData(data))
+    .catch(err => console.error("Error fetching exhibitions:", err));
+    
     // Fetch artworks
     fetch(`${API_URL}/api/artworks`)
-      .then(res => res.json())
-      .then(data => setArtworksData(data))
-      .catch(err => console.error("Error fetching artworks:", err));
+    .then(res => res.json())
+    .then(data => setArtworksData(data))
+    .catch(err => console.error("Error fetching artworks:", err));
   }, []);
-
+  
   const artwork = artworksData.find((a) => a.id === parseInt(id));
   const exhibition = artwork ? exhibitionsData.find((e) => e.id === artwork.exhibition) : null;
-
+  
   if (!artwork) return <div className="p-12 text-center">Artwork not found</div>;
-
+  
+  const fullImgUrl = `${API_URL}/api/artworks/file/${artwork.id}`;
   return (
     <div className="flex flex-col items-center min-h-screen p-8 md:p-16">
       {/* Image */}
       <div className="w-full md:w-5/6 lg:w-4/5 flex justify-center mb-8">
         <img
-          src={artwork.img || `https://picsum.photos/600/400?random=${artwork.id}`}
+          src={fullImgUrl || `https://picsum.photos/600/400?random=${artwork.id}`}
           alt={artwork.title[i18n.language] || artwork.title.en}
           className="w-full h-auto max-h-[90vh] shadow-lg object-contain"
         />
